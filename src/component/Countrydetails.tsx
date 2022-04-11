@@ -31,17 +31,56 @@ const Countrydetails = () => {
             Flag: data.flags.png,
             imageurl: data.coatOfArms.png
         })
-console.log(data)
+        console.log(data)
     }
 
     useEffect(() => {
         if (country) {
             detailes()
         }
-    },[country])
+    }, [country])
     return (
-        <div >
-            <Box 
+        <div  >
+
+            <h3 style={{textAlign:'center'}}>Country Details</h3>
+            <Paper  style={{ boxShadow: '5px 10px #888888' , border:'1px solid black', width:'25rem', height:'13rem'}}   sx={{p:5, ml: 65, mr: 70, mt: 10 }}>
+                <div style={{ float: 'left' }}>
+                    <Typography>
+                        Countryname: {contryDetailes.countryname}
+                    </Typography>
+                    <Typography>
+                        Capital: {contryDetailes.Capital}
+                    </Typography>
+                    <Typography>
+                        Population: {contryDetailes.population}
+                    </Typography>
+                    <Typography>
+                        Latitude: {contryDetailes.latitude}
+                    </Typography>
+                    <Typography sx={{mb:5}}>
+                        Longitude: {contryDetailes.longitude}
+                    </Typography>
+                    <Link to={`/weather/${contryDetailes.Capital}`} style={{ textDecoration: 'none' }}>
+                    <IconButton   aria-label="delete" size="large" >
+                        <Button variant="contained">Capital Weather</Button>
+                    </IconButton>
+                </Link>
+                </div>
+
+                <div style={{ float: 'right' }}>
+                    <Avatar
+                        variant="rounded"
+                        src={contryDetailes.Flag}
+                        sx={{ width: 70, height: 70,  mt:7,ml:10 }}
+                    /> 
+                    
+                </div>
+                
+                
+            </Paper>
+           
+
+            {/* <Box 
                 sx={{ml:10,mt:10,
                     display: 'non',
                     flexWrap: 'wrap',
@@ -104,9 +143,9 @@ console.log(data)
                         </TableCell>
                     </TableRow>
 
-                    {/* <img src={contryDetailes.imageurl} alt="Symbol" /> */}
+                   
                 </Paper>
-            </Box>
+            </Box> */}
 
 
         </div>
