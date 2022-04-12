@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Paper, Table } from '@mui/material';
+import { Box } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { IconButton, Typography, Stack, Avatar, Button, Card, CardContent } from '@mui/material';
+import { Typography, Avatar, Card, CardContent } from '@mui/material';
 
 
 
@@ -20,7 +20,7 @@ const Weatherdetails = () => {
     )
 
     const getweather = (capital: string) => {
-        fetch(`http://api.weatherstack.com/current?access_key=507e787c24bf924d02c9ef4aef46f862&query=${capital}`)
+        fetch(`http://api.weatherstack.com/current?access_key=d81381e7f65ac20a3115570356e0a315&query=${capital}`)
             .then(res => res.json())
             .then((data) => {
                 setweather(

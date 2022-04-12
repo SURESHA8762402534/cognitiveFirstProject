@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box, Paper } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { TableRow, TableCell, IconButton, Typography, Stack, Avatar, Button } from '@mui/material';
+import { TableRow, TableCell, IconButton, Stack, Avatar, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 
@@ -42,43 +42,53 @@ const Countrydetails = () => {
     return (
         <div  >
 
-            <h3 style={{textAlign:'center'}}>Country Details</h3>
-            <Paper  style={{ boxShadow: '5px 10px #888888' , border:'1px solid black', width:'25rem', height:'13rem'}}   sx={{p:5, ml: 65, mr: 70, mt: 10 }}>
+            <h3 style={{ textAlign: 'center' }}>Country Details</h3>
+            <Paper style={{ boxShadow: '5px 10px #888888', border: '1px solid black', width: '25rem', height: '13rem' }} sx={{ p: 5, ml: 65, mr: 70, mt: 10 }}>
                 <div style={{ float: 'left' }}>
-                    <Typography>
-                        Countryname: {contryDetailes.countryname}
-                    </Typography>
-                    <Typography>
-                        Capital: {contryDetailes.Capital}
-                    </Typography>
-                    <Typography>
-                        Population: {contryDetailes.population}
-                    </Typography>
-                    <Typography>
-                        Latitude: {contryDetailes.latitude}
-                    </Typography>
-                    <Typography sx={{mb:5}}>
-                        Longitude: {contryDetailes.longitude}
-                    </Typography>
+                    <table  style={{ marginBottom: '3rem' }}>
+                        <tr>
+                            <td style={{ textAlign: 'left' }}> CountryName  </td>
+                            <td style={{ textAlign: 'left' }}>: <b>{contryDetailes.countryname}</b></td>
+
+                        </tr>
+                        <tr>
+                            <td style={{ textAlign: 'left' }}>Capital </td>
+                            <td style={{ textAlign: 'left' }}>: <b>{contryDetailes.Capital}</b></td>
+                        </tr>
+                        <tr>
+                            <td style={{ textAlign: 'left' }}>Population </td>
+                            <td style={{ textAlign: 'left' }}>: <b>{contryDetailes.population}</b></td>
+                        </tr>
+                        <tr>
+                            <td style={{ textAlign: 'left' }}>Latitude </td>
+                            <td style={{ textAlign: 'left' }}>: <b>{contryDetailes.latitude}</b></td>
+
+                        </tr>
+                        <tr>
+                            <td style={{ textAlign: 'left' }}>Longitude </td>
+                            <td style={{ textAlign: 'left' }}>: <b>{contryDetailes.longitude}</b></td>
+
+                        </tr>
+                    </table>
                     <Link to={`/weather/${contryDetailes.Capital}`} style={{ textDecoration: 'none' }}>
-                    <IconButton   aria-label="delete" size="large" >
-                        <Button variant="contained">Capital Weather</Button>
-                    </IconButton>
-                </Link>
+                        <IconButton aria-label="delete" size="large" >
+                            <Button variant="contained">Capital Weather</Button>
+                        </IconButton>
+                    </Link>
                 </div>
 
-                <div style={{ float: 'right' }}>
+                <div style={{ float: 'left' }}>
                     <Avatar
                         variant="rounded"
                         src={contryDetailes.Flag}
-                        sx={{ width: 70, height: 70,  mt:7,ml:10 }}
-                    /> 
-                    
+                        sx={{ width: 70, height: 70, mt: 7, ml: 10 }}
+                    />
+
                 </div>
-                
-                
+
+
             </Paper>
-           
+
 
             {/* <Box 
                 sx={{ml:10,mt:10,
@@ -92,7 +102,7 @@ const Countrydetails = () => {
                 }}
             >
 
-                <Paper elevation={5}  style={{backgroundImage: 'linear-gradient(to right, rgba(210,0,0,0), rgba(230,0,0,0.5))'}} >
+                <Paper elevation={5}  style={{backgroundImage: 'linear-gradient(to left, rgba(210,0,0,0), rgba(230,0,0,0.5))'}} >
                     <TableRow hover sx={{ mb: 3, '&:last-child td, &:last-child th': { border: 0 } }} >
                         <TableCell component="th" scope="row">
                             <Button variant="outlined">
@@ -111,20 +121,20 @@ const Countrydetails = () => {
                         </TableCell>
                         <TableCell>
                             <IconButton aria-label="delete" size="large" >
-                                <Typography sx={{ mr: 2 }}>
+                                <tr sx={{ mr: 2 }}>
                                     <Button color="error">
                                         population: {contryDetailes.population}
                                     </Button>
 
-                                </Typography>
+                                </tr>
                             </IconButton>
                             <IconButton aria-label="delete" size="large" >
-                                <Typography>
+                                <tr>
                                     Latitude: {contryDetailes.latitude}
-                                </Typography>
-                                <Typography sx={{ mr: 5, ml: 2 }}>
+                                </tr>
+                                <tr sx={{ mr: 5, ml: 2 }}>
                                     Longitude: {contryDetailes.longitude}
-                                </Typography>
+                                </tr>
                             </IconButton>
 
                             <IconButton aria-label="delete" size="large" >

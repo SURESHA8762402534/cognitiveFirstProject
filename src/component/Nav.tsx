@@ -41,6 +41,7 @@ const Nav = () => {
 
     const handelClick = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setname({name:''})
         // console.log(input.name);
         navigate(`/country/${input.name}`)
     }
