@@ -35,9 +35,13 @@ const Countrydetails = () => {
     }
 
     useEffect(() => {
-        if (country) {
+        try{
             detailes()
         }
+        catch(error){
+            alert('Enter correct country name')
+        }
+        
     }, [country])
     return (
         <div  >

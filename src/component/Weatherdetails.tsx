@@ -33,7 +33,7 @@ const Weatherdetails = () => {
                         precip: data?.current.precip
                     }
                 )
-                console.log(data)
+                
             })
     }
 
@@ -41,13 +41,12 @@ const Weatherdetails = () => {
         if (capital) {
             getweather(capital)
         }
-        console.log(capital);
 
     }, [capital])
 
     return (
         <div>
-            <h3 style={{ textAlign: 'center', marginBottom: '50px' }}> Current Weather Condition of {weatherdata.capital}</h3>
+            <h3 style={{ textAlign: 'center', marginBottom: '50px' }}> Current Weather Report of {weatherdata.capital}</h3>
 
 
             <Card style={{ boxShadow: '5px 10px #888888' }} variant='outlined' sx={{ display: 'flex', ml: 70, mr: 70 }}>
